@@ -1,19 +1,22 @@
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': post.loveIts > 0,
-                'list-group-item-danger': post.loveIts < 1}">
+                'list-group-item-danger': post.loveIts < 0}">
   <!--
   <div style="width:20px;height:20px;background-color:red;"
        *ngIf="unitStatus === 'disabled'"></div>
   -->
 
-  <h4>post : {{ post.title }} -- likes : {{ post.loveIts }}</h4>
+  <h2>{{ post.title }}</h2>
+  rédigé le <em>{{post.createdAt | date:'short'}}</em>
+  <br/>
+  <p>{{post.content}}</p>
 
 
 
 
   <button class="btn btn-success"
-          (click)="onLike()">Like</button>
+          (click)="onLike()">Love it</button>
   <button class="btn btn-danger"
-          (click)="onDislike()">Dislike</button>
+          (click)="onDislike()">Don't love it</button>
 
 </li>

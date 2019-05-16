@@ -17,7 +17,7 @@
 
       <ul class="list-group">
 
-      <app-blog-post-short [post]="posts[0]"></app-blog-post-short>
+      <app-blog-post-short *ngFor="let p of posts" [post]="p"></app-blog-post-short>
 
       </ul>
 
