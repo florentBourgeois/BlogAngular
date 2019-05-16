@@ -1,3 +1,13 @@
-<p>
-  blog-post-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <ul class="list-group">
+
+        <app-blog-post-short *ngFor="let p of posts" [post]="p"></app-blog-post-short>
+
+      </ul>
+
+    </div>
+  </div>
+</div>
