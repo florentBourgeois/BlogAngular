@@ -8,7 +8,7 @@
   <div><label>id: </label>{{post.id}}</div>
   <div><label>content: </label>{{post.content}}</div>
 
-
+</div>
 
 
 <div class="container">
@@ -18,8 +18,11 @@
       <ul class="list-group">
 
       <app-blog-post-short [post]="posts[0]"></app-blog-post-short>
+
       </ul>
 
     </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>
