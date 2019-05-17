@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Post} from './post';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +10,25 @@ import { Component } from '@angular/core';
 
 
 
+
 export class AppComponent {
   title = 'Angular-Blog';
-  post: Post = {id: 1, title: 'hello', content: 'ceci est le premier post', loveIts: 10, createdAt: new Date()};
-  post2: Post = {id: 2, title: 'hello2', content: 'post deux', loveIts: 1, createdAt: new Date('22 april 2019')};
-  post3: Post = {id: 3, title: 'hello3', content: 'not loved', loveIts: -4, createdAt: new Date('1 mars 2007')};
+  post: Post = new Post(1, 'hello', 'ceci est le premier post', 10);
+  post2: Post = new Post(1, 'hello2', 'post deux', 0);
+  post3: Post = new Post(3, 'hello3', 'not loved', -4);
 
-  posts = [this.post, this.post2, this.post3];
+  posts: Post[] = [];
+
+  ngOnInit(){
+    this.post2.setDate(new Date('22 april 2019'));
+    this.post3.setDate((new Date('10 may 2012')))
+
+    this.posts.push(this.post);
+    this.posts.push(this.post2);
+    this.posts.push(this.post3);
+  }
 }
 
 
 
-export class Post {
-  id: number;
-  title: string;
-  content: string;
-  loveIts: number;
-  createdAt: Date;
-}
 
